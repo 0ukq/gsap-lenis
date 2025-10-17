@@ -11,7 +11,6 @@ export default class IntersectTrigger {
 
   constructor() {
     this.logic();
-    console.log(this.elements);
   }
 
   private logic() {
@@ -19,7 +18,6 @@ export default class IntersectTrigger {
     this.elements.forEach((element) => {
       ScrollTrigger.create({
         trigger: element,
-        markers: true,
         start: "top 80%",
         onEnter: () => element.classList.add("is-active"),
       });

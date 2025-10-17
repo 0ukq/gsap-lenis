@@ -1,3 +1,5 @@
+@import "./animate.css";
+
 body {
   background-color: #fafaf2;
 }
@@ -11,9 +13,12 @@ span {
   display: inline-block;
 }
 
+.inner {
+  padding-inline: rem(80);
+}
+
 .text {
   font-size: rem(50);
-  line-height: 1;
 
   &--center {
     text-align: center;
@@ -26,6 +31,7 @@ span {
 
   > * {
     grid-area: 1/1;
+    line-height: 1;
   }
 }
 

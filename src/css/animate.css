@@ -1,0 +1,68 @@
+@keyframes y-visible {
+  from {
+    translate: 0 100%;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes rotate-visible {
+  from {
+    translate: 0 100%;
+    rotate: 15deg;
+  }
+  to {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+}
+
+/* 初期表示版 */
+/* .animate-text-visible {
+  display: inline-block;
+  overflow: clip;
+  > .visible-text {
+    display: inline-block;
+    translate: 0 100%;
+    transform-origin: left;
+    animation: y-visible 1.5s var(--easeOutQuart) forwards;
+  }
+
+  &--rotate {
+    > .visible-text {
+      animation-name: rotate-visible;
+    }
+  }
+} */
+
+/* intersect版 */
+.animate-text-visible {
+  display: inline-block;
+  overflow: clip;
+  > .visible-text {
+    display: inline-block;
+    translate: 0 100%;
+    transform-origin: left;
+    transition: translate 1.5s var(--easeOutQuart);
+  }
+
+  &.is-active {
+    > .visible-text {
+      translate: 0 0%;
+    }
+  }
+
+  &--rotate {
+    > .visible-text {
+      rotate: 15deg;
+      transition: translate, rotate, 1.5s var(--easeOutQuart);
+    }
+
+    &.is-active {
+      > .visible-text {
+        rotate: 0deg;
+      }
+    }
+  }
+}
