@@ -37,13 +37,13 @@ export default class StackText {
 
       texts.forEach((text, index) => {
         // splitTextの初期化
-        SplitText.create(text, {
+        const split = SplitText.create(text, {
           type: "chars",
           tag: "span",
         });
 
         // 初期位置
-        gsap.set(text.querySelectorAll("span"), {
+        gsap.set(split.chars, {
           yPercent: index === 0 ? 0 : 110, // 最初の要素は上、複製した要素は下に配置
         });
 
@@ -51,7 +51,7 @@ export default class StackText {
           trigger: item,
           start: "top 80%",
           onEnter: () => {
-            gsap.to(text.querySelectorAll("span"), {
+            gsap.to(split.chars, {
               yPercent: index === 0 ? -110 : 0,
               stagger: 0.05,
               duration: 1,

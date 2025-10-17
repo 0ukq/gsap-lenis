@@ -5,8 +5,10 @@ body {
 }
 
 h1 {
+  font-size: liq(60);
   font-weight: 400;
   letter-spacing: 0.1em;
+  color: #fff;
 }
 
 span {
@@ -14,24 +16,31 @@ span {
 }
 
 .inner {
-  padding-inline: rem(80);
+  padding-inline: liq(80);
+}
+
+.clip {
+  overflow: clip;
 }
 
 .text {
-  font-size: rem(50);
+  font-size: liq(40);
+  line-height: 1;
 
   &--center {
     text-align: center;
   }
 }
 
+.fv {
+  background-color: #444341;
+}
+
 .stack-text {
   display: grid;
-  overflow: clip;
 
   > * {
     grid-area: 1/1;
-    line-height: 1;
   }
 }
 
