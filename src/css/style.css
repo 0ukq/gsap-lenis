@@ -1,0 +1,44 @@
+body {
+  background-color: #fafaf2;
+}
+
+h1 {
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+span {
+  display: inline-block;
+}
+
+.text {
+  font-size: rem(50);
+  line-height: 1;
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.stack-text {
+  display: grid;
+  overflow: clip;
+
+  > * {
+    grid-area: 1/1;
+  }
+}
+
+.content-full {
+  height: 100vh;
+}
+
+.content-center {
+  display: grid;
+  place-content: center;
+  height: 100%;
+
+  &--gap-md {
+    gap: rem(40);
+  }
+}
