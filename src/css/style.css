@@ -4,13 +4,6 @@ body {
   background-color: #fafaf2;
 }
 
-h1 {
-  font-size: liq(60);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  color: #fff;
-}
-
 span {
   display: inline-block;
 }
@@ -32,18 +25,6 @@ span {
   }
 }
 
-.fv {
-  background-color: #444341;
-}
-
-.stack-text {
-  display: grid;
-
-  > * {
-    grid-area: 1/1;
-  }
-}
-
 .content-full {
   height: 100vh;
 }
@@ -55,5 +36,27 @@ span {
 
   &--gap-md {
     gap: rem(40);
+  }
+}
+
+.stack-text {
+  display: grid;
+
+  > * {
+    grid-area: 1/1;
+  }
+}
+
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100svh;
+  background-color: #444341;
+  z-index: 1;
+  &__title {
+    font-size: liq(60);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #fff;
   }
 }

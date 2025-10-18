@@ -1,19 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/css/common.css">
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
     <title>gsap-lenis</title>
   </head>
   <body>
-    <section class="content-full">
+    <section data-loading class="loading content-full">
       <div class="content-center">
-        <h1 class="clip">
-          <span data-first-text>TEXT ANIMATION SAMPLE</span>
+        <h1 class="loading__title clip">
+          <span data-loading-text>TEXT ANIMATION SAMPLE</span>
         </h1>
+      </div>
+    </section>
+
+    <section class="fv content-full">
+      <div class="content-center">
+        <h1 class="fv__title">FV TITLE</h1>
       </div>
     </section>
 
@@ -35,7 +41,10 @@
       <div class="content-center">
         <div class="inner">
           <p class="text">
-            <span data-intersect-trigger class="animate-text-visible animate-text-visible--rotate">
+            <span
+              data-intersect-trigger
+              class="animate-text-visible animate-text-visible--rotate"
+            >
               <span class="visible-text">ROTATE</span>
             </span>
           </p>

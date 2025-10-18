@@ -1,11 +1,11 @@
 import IntersectTrigger from "./logic/intersect-trigger";
-import FirstText from "./modules/first-text";
+import LoadingAnimation from "./modules/loading-animation";
 import StackText from "./modules/stack-text";
 
 export default class Index {
   constructor() {
     new StackText();
     new IntersectTrigger();
-    new FirstText();
+    new LoadingAnimation();
   }
 }
