@@ -14,6 +14,9 @@ importers:
       gsap:
         specifier: ^3.13.0
         version: 3.13.0
+      lenis:
+        specifier: ^1.3.11
+        version: 1.3.11
       pixi.js:
         specifier: ^8.14.0
         version: 8.14.0
@@ -395,6 +398,20 @@ packages:
   js-binary-schema-parser@2.0.3:
     resolution: {integrity: sha512-xezGJmOb4lk/M1ZZLTR/jaBHQ4gG/lqQnJqdIv4721DMggsa1bDVlHXNeHYogaIEHD9vCRv0fcL4hMA+Coarkg==}
 
+  lenis@1.3.11:
+    resolution: {integrity: sha512-lkyBnNTVwJzlupp+VL6LTn62WeT8WponuLpmTU0Z20cMwMsLLjqbSqwuA7I1yKSVWCBj/awo4jnFzOMOVCB8OQ==}
+    peerDependencies:
+      '@nuxt/kit': '>=3.0.0'
+      react: '>=17.0.0'
+      vue: '>=3.0.0'
+    peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
+      react:
+        optional: true
+      vue:
+        optional: true
+
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -755,6 +772,8 @@ snapshots:
   ismobilejs@1.1.1: {}
 
   js-binary-schema-parser@2.0.3: {}
+
+  lenis@1.3.11: {}
 
   nanoid@3.3.11: {}
 

@@ -1,3 +1,6 @@
 :root {
+  --col_white: #fafaf2;
+  --col_black: #444341;
   --easeOutQuart: cubic-bezier(0.25, 1, 0.5, 1);
+  --z-loading: 1000;
 }

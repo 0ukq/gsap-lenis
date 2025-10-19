@@ -1,7 +1,17 @@
 @import './animate.css';
 
 body {
-  background-color: #fafaf2;
+  color: var(--col_white);
+  background-color: var(--col_black);
+}
+
+:has(body.is-revert) {
+  body {
+    color: var(--col_black);
+  }
+  .app-background__color {
+    background-color: var(--col_white);
+  }
 }
 
 span {
@@ -44,7 +54,7 @@ main {
   }
 }
 
-.stack-text {
+.stack {
   display: grid;
 
   > * {
@@ -57,13 +67,12 @@ main {
   position: fixed;
   width: 100vw;
   height: 100svh;
-  background-color: #444341;
-  z-index: 1;
+  background-color: var(--col_black);
+  z-index: var(--z-loading);
   &__title {
     font-size: liq(60);
     font-weight: 400;
     letter-spacing: 0.1em;
-    color: #fff;
     text-align: center;
     &-transparent {
       opacity: 0.3;
@@ -71,8 +80,17 @@ main {
   }
 }
 
-.particle-content {
+.app-background {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100svh;
+  &__color {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+    transition: background-color 2s var(--easeOutQuart);
+  }
 }

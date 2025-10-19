@@ -9,16 +9,19 @@
     <title>gsap-lenis</title>
   </head>
   <body>
-    <section data-loading class="loading content-full">
+    <!-- <div data-loading class="loading content-full">
       <div class="content-center">
-        <h1 class="loading__title clip stack-text">
+        <h1 class="loading__title clip stack">
           <span data-loading-text class="loading__title-transparent">TEXT ANIMATION SAMPLE</span>
           <span data-loading-text class="loading__title-after">TEXT ANIMATION SAMPLE</span>
         </h1>
       </div>
-    </section>
+    </div> -->
 
-    <div data-background-particles class="particle-content"></div>
+    <div class="stack clip app-background">
+      <div data-background-particle class="app-background__particle"></div>
+      <div data-background-color class="app-background__color"></div>
+    </div>
 
     <main>
       <section class="fv content-full">
@@ -29,13 +32,13 @@
 
       <section class="content-full">
         <div class="content-center content-center--gap-md">
-          <div data-stack-item class="stack-text clip">
+          <div data-stack-item class="stack clip">
             <p data-stack-text class="text text--center">SPLIT TEST</p>
           </div>
-          <div data-stack-item class="stack-text clip">
+          <div data-stack-item class="stack clip">
             <p data-stack-text class="text text--center">ANIMATE TEXT TEST</p>
           </div>
-          <div data-stack-item class="stack-text clip">
+          <div data-stack-item class="stack clip">
             <p data-stack-text class="text text--center">日本語テキスト テスト</p>
           </div>
         </div>
@@ -65,6 +68,54 @@
             <p class="text">
               <span data-intersect-trigger class="animate-text-visible">
                 <span class="visible-text">SAMPLE SAMPLE SAMPLE SAMPLE</span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section data-lenis-duration-test class="content-full">
+        <div class="content-center">
+          <div class="inner">
+            <p class="text">
+              <span data-intersect-trigger class="animate-text-visible">
+                <span class="visible-text">CONTENT TES TEST</span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section data-background-change-trigger class="content-full">
+        <div class="content-center">
+          <div class="inner">
+            <p class="text">
+              <span data-intersect-trigger class="animate-text-visible">
+                <span class="visible-text">SKILLS</span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-full">
+        <div class="content-center">
+          <div class="inner">
+            <p class="text">
+              <span data-intersect-trigger class="animate-text-visible">
+                <span class="visible-text">CONTENT TES TEST</span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-full">
+        <div class="content-center">
+          <div class="inner">
+            <p class="text">
+              <span data-intersect-trigger class="animate-text-visible">
+                <span class="visible-text">CONTENT TES TEST</span>
               </span>
             </p>
           </div>

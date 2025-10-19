@@ -10,7 +10,7 @@ interface Particle {
 }
 
 export default class BackgroundParticles {
-  private container: HTMLElement | null = document.querySelector('[data-background-particles]');
+  private container: HTMLElement | null = document.querySelector('[data-background-particle]');
   private width: number = window.innerWidth;
   private height: number = window.innerHeight;
 
