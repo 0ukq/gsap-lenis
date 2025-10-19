@@ -9,14 +9,34 @@
     <title>gsap-lenis</title>
   </head>
   <body>
-    <!-- <div data-loading class="loading content-full">
+    <div data-loading class="loading content-full">
       <div class="content-center">
-        <h1 class="loading__title clip stack">
-          <span data-loading-text class="loading__title-transparent">TEXT ANIMATION SAMPLE</span>
-          <span data-loading-text class="loading__title-after">TEXT ANIMATION SAMPLE</span>
-        </h1>
+        <div data-building-container class="loading-container">
+          <div class="loading-lottie clip stack">
+            <div data-lottie-dot></div>
+            <div data-lottie-salute></div>
+          </div>
+          <div class="loading-paragraph stack clip">
+            <div class="stack clip">
+              <p
+                data-building-text
+                class="loading-paragraph__text loading-paragraph__text--transparent text--center"
+              >
+                LOADING...
+              </p>
+              <p
+                data-building-text
+                data-building-text-fill
+                class="loading-paragraph__text text--center"
+              >
+                LOADING...
+              </p>
+            </div>
+            <p data-completed-text class="loading-paragraph__text text--center">COMPLETED.</p>
+          </div>
+        </div>
       </div>
-    </div> -->
+    </div>
 
     <div class="stack clip app-background">
       <div data-background-particle class="app-background__particle"></div>
@@ -26,7 +46,11 @@
     <main>
       <section class="fv content-full">
         <div class="content-center">
-          <h1 class="fv__title">FV TITLE</h1>
+          <h1 class="fv__title">
+            <span data-intersect-trigger class="animate-text-visible animate-text-visible--rotate">
+              <span class="visible-text">FV TITLE</span>
+            </span>
+          </h1>
         </div>
       </section>
 

@@ -59,11 +59,39 @@ main {
 
   > * {
     grid-area: 1/1;
-    width: fit-content;
   }
 }
 
 .loading {
+  position: fixed;
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--col_black);
+  z-index: var(--z-loading);
+
+  .loading-container {
+    display: grid;
+    gap: liq(15) 0;
+  }
+
+  .loading-lottie {
+    width: liq(70);
+    margin-inline: auto;
+  }
+
+  .loading-paragraph {
+    &__text {
+      font-size: liq(30);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      line-height: 1;
+      &--transparent {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+/* .loading {
   position: fixed;
   width: 100vw;
   height: 100svh;
@@ -78,7 +106,7 @@ main {
       opacity: 0.3;
     }
   }
-}
+} */
 
 .app-background {
   position: fixed;
@@ -93,4 +121,9 @@ main {
     z-index: 1;
     transition: background-color 2s var(--easeOutQuart);
   }
+}
+
+.fv {
+  color: var(--col_black);
+  background-color: var(--col_white);
 }

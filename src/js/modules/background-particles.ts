@@ -42,14 +42,14 @@ export default class BackgroundParticles {
 
   // パーティクル追加
   private addParticles() {
-    const quantity = 20; // パーティクルの数
-    const particleColors = [0xe2e2e2, 0xccc6c6, 0xafa0a0, 0x828282];
+    const quantity = 40; // パーティクルの数
+    const particleColors = [0xffffff, 0xe2e2e2, 0xccc6c6, 0xafa0a0, 0x828282];
 
     this.particles = [...Array(quantity)].map(_ => {
       return {
         x: Math.floor(Math.random() * this.app.screen.width), // x軸
         y: Math.floor(Math.random() * this.app.screen.height), // y軸
-        radius: Math.floor(Math.random() * 4 + 1), // 最大半径を5に設定
+        radius: Math.floor(Math.random() * 2 + 1), // 最大半径を5に設定
         color: particleColors[Math.floor(Math.random() * particleColors.length)], // カラー指定
         vx: (Math.random() - 0.5) * 0.5, // x軸の速度
         vy: (Math.random() - 0.5) * 0.5, // y軸の速度
