@@ -75,13 +75,13 @@ main {
   }
 
   .loading-lottie {
-    width: liq(70);
+    width: liq(30);
     margin-inline: auto;
   }
 
   .loading-paragraph {
     &__text {
-      font-size: liq(30);
+      font-size: liq(20);
       font-weight: 400;
       letter-spacing: 0.2em;
       line-height: 1;
@@ -91,22 +91,6 @@ main {
     }
   }
 }
-/* .loading {
-  position: fixed;
-  width: 100vw;
-  height: 100svh;
-  background-color: var(--col_black);
-  z-index: var(--z-loading);
-  &__title {
-    font-size: liq(60);
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-align: center;
-    &-transparent {
-      opacity: 0.3;
-    }
-  }
-} */
 
 .app-background {
   position: fixed;

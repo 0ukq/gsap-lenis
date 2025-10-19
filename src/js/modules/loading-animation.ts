@@ -1,10 +1,9 @@
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
-import { SplitText } from 'gsap/SplitText';
 import Lottie from 'lottie-web';
 import type { AnimationItem } from 'lottie-web';
 
-gsap.registerPlugin(CustomEase, SplitText);
+gsap.registerPlugin(CustomEase);
 
 export default class LoadingAnimation {
   // コンテナ要素
@@ -23,12 +22,8 @@ export default class LoadingAnimation {
   private emojiSalute: HTMLElement | null = document.querySelector('[data-lottie-salute]');
   private lottieSalute: AnimationItem = null!;
 
-  // スプリットテキスト
-  private splitText: SplitText[] = [];
-
   constructor() {
     this.customEase();
-    this.splitInit();
     this.textInit();
     this.lottieInit();
     this.animation();
@@ -36,20 +31,6 @@ export default class LoadingAnimation {
 
   private customEase() {
     CustomEase.create('buildingEase', '0.16, 1, 0.3, 1'); // デフォルトのイージング
-  }
-
-  // テキストの分割
-  private splitInit() {
-    if (!this.buildingTexts || !this.completedText) return;
-
-    this.buildingTexts.forEach(text => {
-      this.splitText.push(
-        SplitText.create(text, {
-          type: 'chars',
-          tag: 'span',
-        })
-      );
-    });
   }
 
   private textInit() {
@@ -100,17 +81,15 @@ export default class LoadingAnimation {
     )
       return;
 
-    const tl = gsap.timeline({ defaults: { duration: 1.4, ease: 'buildingEase' } }); // タイムライン
+    const tl = gsap.timeline({ defaults: { duration: 1.8, ease: 'buildingEase' } }); // タイムライン
 
     tl.to(this.buildingTexts, {
       yPercent: 0,
-      duration: 1.8,
     });
     tl.to(
       this.emojiDot,
       {
         yPercent: 0,
-        duration: 1.8,
       },
       '<'
     );
@@ -140,7 +119,7 @@ export default class LoadingAnimation {
       {
         yPercent: 0,
       },
-      '-=.8'
+      '-=1.6'
     );
     tl.to(
       this.emojiSalute,
@@ -152,27 +131,15 @@ export default class LoadingAnimation {
       },
       '<'
     );
-    // コンテナ要素 移動
     tl.to(
-      this.container,
+      this.wrapper,
       {
-        xPercent: -10,
+        duration: 1,
+        scale: 0.7,
+        ease: CustomEase.create('wrapperEase', '0.22, 1, 0.36, 1'),
       },
       '+=1.4'
     );
-    // コンテナ要素 透過
-    tl.to(
-      this.container,
-      {
-        clipPath: 'inset(0% 100% 0% 0%)',
-      },
-      '<'
-    );
-    tl.to(this.wrapper, {
-      duration: 1,
-      scale: 0.8,
-      ease: CustomEase.create('wrapperEase', '0.22, 1, 0.36, 1'),
-    });
     tl.to(
       this.wrapper,
       {
