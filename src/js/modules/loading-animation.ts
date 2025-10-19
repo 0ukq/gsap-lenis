@@ -1,68 +1,73 @@
-import { gsap } from "gsap";
-import { CustomEase } from "gsap/CustomEase";
-import { SplitText } from "gsap/SplitText";
+import { gsap } from 'gsap';
+import { CustomEase } from 'gsap/CustomEase';
+import { SplitText } from 'gsap/SplitText';
 
 gsap.registerPlugin(SplitText, CustomEase);
 
 export default class LoadingAnimation {
-  private split: SplitText | null = null;
-  private content: HTMLElement | null =
-    document.querySelector("[data-loading]");
+  private content: HTMLElement | null = document.querySelector('[data-loading]');
+  private texts: HTMLElement[] | null = Array.from(
+    document.querySelectorAll('[data-loading-text]')
+  );
 
   constructor() {
     this.customEase();
-    this.splitInit();
     this.animate();
   }
 
   // イージング定義
   private customEase() {
-    CustomEase.create("charsEase", "0.22, 1, 0.36, 1"); // 文字のeasing
-    CustomEase.create("contentEase", ".69,-0.01,0,.98"); // コンテンツのeasing
-    CustomEase.create("textEase", "0, 0.55, 0.45, 1"); // テキストのeasing
-  }
-
-  // SplitText初期化
-  private splitInit() {
-    const text = document.querySelector("[data-loading-text]");
-    if (!text) return;
-
-    this.split = SplitText.create(text, {
-      type: "chars",
-      tag: "span",
-    });
+    CustomEase.create('titleEase', '0.11, 0, 0.5, 0'); // タイトルのeasing
+    CustomEase.create('charsEase', '0.22, 1, 0.36, 1'); // 文字のeasing
+    CustomEase.create('contentEase', '.69,-0.01,0,.98'); // コンテンツのeasing
+    CustomEase.create('textEase', '0, 0.55, 0.45, 1'); // テキストのeasing
   }
 
   // アニメーション実行
   private animate() {
-    if (!this.content || !this.split) return;
+    if (!this.content || !this.texts) return;
 
-    const tl = gsap.timeline();
-    gsap.set(this.split.chars, { yPercent: 100 });
+    this.texts.forEach(text => {
+      gsap.set(text, {
+        clipPath: 'inset(0% 100% 0% 0%)',
+      });
+    });
 
-    tl.to(this.split.chars, {
-      yPercent: 0,
-      duration: 0.6,
-      stagger: 0.05,
-      ease: "charsEase",
+    const textsBaseDuration = 1.6;
+
+    const tl = gsap.timeline({
+      delay: 1,
+    });
+
+    tl.to(this.texts[0], {
+      duration: textsBaseDuration,
+      clipPath: 'inset(0% 0% 0% 0%)',
     });
     tl.to(
-      this.split.chars,
+      this.texts[1],
+      {
+        duration: textsBaseDuration,
+        clipPath: 'inset(0% 0% 0% 0%)',
+      },
+      `-=${textsBaseDuration - 0.2}`
+    );
+    tl.to(
+      this.texts,
       {
         yPercent: -100,
         duration: 1.2,
-        ease: "textEase",
+        ease: 'textEase',
       },
-      "+=.4"
+      '+=.6'
     );
     tl.to(
       this.content,
       {
         yPercent: -100,
         duration: 1.4,
-        ease: "contentEase",
+        ease: 'contentEase',
       },
-      "-=.7"
+      '-=.7'
     );
   }
 }

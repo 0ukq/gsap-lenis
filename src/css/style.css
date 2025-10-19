@@ -1,4 +1,4 @@
-@import "./animate.css";
+@import './animate.css';
 
 body {
   background-color: #fafaf2;
@@ -6,6 +6,11 @@ body {
 
 span {
   display: inline-block;
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
 
 .inner {
@@ -44,6 +49,7 @@ span {
 
   > * {
     grid-area: 1/1;
+    width: fit-content;
   }
 }
 
@@ -58,5 +64,15 @@ span {
     font-weight: 400;
     letter-spacing: 0.1em;
     color: #fff;
+    text-align: center;
+    &-transparent {
+      opacity: 0.3;
+    }
   }
+}
+
+.particle-content {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
